@@ -94,38 +94,19 @@ These are array of values with lables appended to them.
 Why dense layer is used after LSTM?
 
 Timedistributed dense layer is used on RNN, including LSTM, to keep one-to-one relations on input and output.
-## Predictions
+## 8. Predictions
 
-After tuning the model, tested it out by predicting the emotions for the test data. For a model with the given accuracy these are a sample of the actual vs predicted values.
-<br>
-<br>
-![](images/predict.png?raw=true)
-<br>
+### Loss and accuracy 
+![image](https://user-images.githubusercontent.com/63282184/160749529-79a36dc0-c802-417f-8716-871e22c0bf2b.png)
 
-## Testing out with live voices.
-In order to test out our model on voices that were completely different than what we have in our training and test data, we recorded our own voices with dfferent emotions and predicted the outcomes. You can see the results below:
-The audio contained a male voice which said **"This coffee sucks"** in a angry tone.
-<br>
-![](images/livevoice.PNG?raw=true)
-<br>
-<br>
-![](images/livevoice2.PNG?raw=true)
-<br>
+### Sample output of the prediction
+![image](https://user-images.githubusercontent.com/63282184/160749576-137acece-d44b-4219-a3b4-74587b9dc9c1.png)
 
-### As you can see that the model has predicted the male voice and emotion very accurately in the image above.
+### Confusion Matrix
 
-## NOTE: If you are using the model directly and want to decode the output ranging from 0 to 9 then the following list will help you.
+![image](https://user-images.githubusercontent.com/63282184/160749644-491ce7e1-48cd-452e-a58d-a0c7abf13d04.png)
 
-0 - female_angry <br>
-1 - female_calm <br>
-2 - female_fearful <br>
-3 - female_happy <br>
-4 - female_sad <br>
-5 - male_angry <br>
-6 - male_calm <br>
-7 - male_fearful <br>
-8 - male_happy <br>
-9 - male_sad <br>
 
 ## Conclusion
-Building the model was a challenging task as it involved lot of trail and error methods, tuning etc. The model is very well trained to distinguish between male and female voices and it distinguishes with 100% accuracy. The model was tuned to detect emotions with more than 70% accuracy. Accuracy can be increased by including more audio files for training.
+We can see our model is more accurate in predicting surprise, angry emotions and it makes sense also because audio files of these emotions differ to other audio files in a lot of ways like pitch, speed etc..
+We overall achieved 61% accuracy on our test data and its decent but we can improve it more by applying more augmentation techniques and using other feature extraction methods.
