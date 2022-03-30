@@ -29,17 +29,34 @@ This can be used by multiple industries to offer different services like marketi
 ![image](https://user-images.githubusercontent.com/63282184/160747907-4ae4b619-f90e-48cd-9567-95ef59872e63.png)
 
 
-## Audio files:
+### Audio files:
 Tested out the audio files by plotting out the waveform and a spectrogram to see the sample audio files.<br>
 **Waveform**
 
 ![image](https://user-images.githubusercontent.com/63282184/160747195-aad8472b-db63-4284-a0c1-565bfdc6150b.png)
 
-
-
 **Spectrogram**<br>
 
 ![image](https://user-images.githubusercontent.com/63282184/160747247-051a4b6b-6063-49b7-bec3-8e29b2e92c76.png)
+
+## 4. Data Augmentation
+
+Data augmentation is the process by which we create new synthetic data samples by adding small perturbations on our initial training set.
+
+- Noise Injection
+It simply add some random value into data by using numpy.
+
+- Shifting Time
+The idea of shifting time is very simple. It just shift audio to left/right with a random second. If shifting audio to left (fast forward) with x seconds, first x seconds will mark as 0 (i.e. silence). If shifting audio to right (back forward) with x seconds, last x seconds will mark as 0 (i.e. silence).
+
+- Changing Pitch
+This augmentation is a wrapper of librosa function. It change pitch randomly
+
+- Changing Speed
+Same as changing pitch, this augmentation is performed by librosa function. It stretches times series by a fixed rate.
+
+![image](https://user-images.githubusercontent.com/63282184/160748073-4c416834-0b91-477e-b32c-174c0ac8ccc0.png)
+
 
 ## Feature Extraction
 The next step involves extracting the features from the audio files which will help our model learn between these audio files.
