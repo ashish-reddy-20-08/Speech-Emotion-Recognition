@@ -58,7 +58,7 @@ Same as changing pitch, this augmentation is performed by librosa function. It s
 ![image](https://user-images.githubusercontent.com/63282184/160748073-4c416834-0b91-477e-b32c-174c0ac8ccc0.png)
 
 
-## Feature Extraction
+## 5. Feature Extraction
 The next step involves extracting the features from the audio files which will help our model learn between these audio files.
 For feature extraction we make use of the [**LibROSA**](https://librosa.github.io/librosa/) library in python which is one of the libraries used for audio analysis. 
 
@@ -74,9 +74,26 @@ For feature extraction we make use of the [**LibROSA**](https://librosa.github.i
 
 These are array of values with lables appended to them. 
 
-## Building Models
 
 
+## 6. Splitting the data 
+ - One hot encoding 
+ - splitting the data 
+ - Scaling our model with sklearn's standard scaler 
+ - Making the data compatible to the model. 
+
+
+## 7. Building Models
+- 1. **Convo layer + dense**
+- Convolutional layers are the major building blocks used in convolutional neural networks.
+- Dense Layer is simple layer of neurons in which each neuron receives input from all the neurons of previous layer, thus called as dense. Dense Layer is used to classify image based on output from convolutional layers.
+
+- 2. **LSTM + dense**
+- An LSTM layer learns long-term dependencies between time steps in time series and sequence data. The state of the layer consists of the hidden state (also known as the output state) and the cell state. The hidden state at time step t contains the output of the LSTM layer for this time step.
+
+Why dense layer is used after LSTM?
+
+Timedistributed dense layer is used on RNN, including LSTM, to keep one-to-one relations on input and output.
 ## Predictions
 
 After tuning the model, tested it out by predicting the emotions for the test data. For a model with the given accuracy these are a sample of the actual vs predicted values.
